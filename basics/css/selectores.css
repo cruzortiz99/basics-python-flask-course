@@ -1,0 +1,12 @@
+/* Selector de tags */
+div {
+  background-color: aqua;
+}
+/* Selectores de clase*/
+.selector-de-clase {
+  background-color: blue;
+}
+/* Selector de id */
+#selector-id {
+  background-color: yellow;
+}

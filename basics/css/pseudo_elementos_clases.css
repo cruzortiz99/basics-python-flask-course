@@ -1,0 +1,65 @@
+/* Pseudo elementos*/
+.pseudo-elemento-first-line::first-line {
+  font-size: 25px;
+  color: green;
+}
+.pseudo-elemento-first-letter::first-letter {
+  font-size: 50px;
+  color: blue;
+}
+
+.pseudo-elemento-before {
+  position: relative;
+  min-height: 60px;
+  border: 1px solid black;
+}
+
+.pseudo-elemento-before::before {
+  content: 'Before';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: blue;
+}
+.pseudo-elemento-before::after {
+  content: 'After';
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: green;
+}
+.pseudo-elemento-selection::selection {
+  background-color: yellow;
+  color: green;
+}
+
+/* Pseudo clases*/
+.hover {
+  height: 50px;
+  width: 50px;
+  background-color: blueviolet;
+}
+.hover:hover {
+  background-color: violet;
+  height: 60px;
+  width: 60px;
+}
+.pseudo-clase-lista li:first-child {
+  color: blue;
+  font-weight: bold;
+  font-size: 20px;
+}
+.pseudo-clase-lista li:last-child {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+.pseudo-clase-lista li:nth-child(2n + 3) {
+  color: green;
+  font-weight: bold;
+  font-size: 25px;
+}

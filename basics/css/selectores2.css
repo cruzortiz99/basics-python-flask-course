@@ -1,0 +1,18 @@
+/* Conector espacio */
+main li {
+  background-color: green;
+}
+/**/
+/* Conector de hijos  */
+section > div {
+  background-color: yellow;
+}
+/**/
+/* conector del hermano mas cercano */
+.primer + li {
+  background-color: blue;
+}
+/* conector de todos los hermanos */
+.segundo ~ li {
+  background-color: brown;
+}

@@ -1,0 +1,44 @@
+.pixels {
+  height: 40px;
+  width: 200px;
+  background-color: blue;
+}
+.cm {
+  height: 2cm;
+  width: 4cm;
+  background-color: pink;
+}
+.in {
+  height: 2in;
+  width: 4in;
+  background-color: violet;
+}
+.porcentaje-container {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+}
+.porcentaje {
+  height: 50%;
+  width: 50%;
+  background-color: green;
+}
+.vh-vw {
+  height: 20vh;
+  width: 15vw;
+  background-color: brown;
+}
+.rem {
+  background-color: chocolate;
+  height: 5rem;
+  width: 40rem;
+}
+html {
+  font-size: 18px;
+}
+.em {
+  background-color: teal;
+  font-size: 20px;
+  height: 2em;
+  width: 20em;
+}

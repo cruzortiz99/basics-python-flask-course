@@ -1,0 +1,14 @@
+p {
+  color: rgb(69, 69, 69);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+.texto {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: overline;
+  text-shadow: 20px 15px 50px blue;
+  text-indent: 200px;
+}
