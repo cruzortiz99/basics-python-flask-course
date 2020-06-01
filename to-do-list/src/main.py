@@ -16,14 +16,20 @@ def home():
     return redirect(url_for('login'))
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
 
 
-@app.route('/to-do')
-def to_do():
-    return render_template('to_do.html', name=request.args.get('name'))
+@app.route('/to-do/<name>')
+def to_do(name):
+    return render_template('to_do.html', name=name)
+
+
+@app.route('/register', methods=['POST'])
+def register():
+    new_user = dict(request.get_json())
+    return new_user
 
 
 if __name__ == '__main__':
