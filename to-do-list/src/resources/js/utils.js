@@ -1,5 +1,5 @@
 function compose( ...functions ) {
-  return functions.reduceRight((prev,current) => current(prev))
+  return (value) => functions.reduceRight((prev,current) => current(prev),value)
 }
 
 function extractFormValues( form ) {
