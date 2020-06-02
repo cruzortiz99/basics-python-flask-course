@@ -25,8 +25,8 @@ function extractFormValues( form ) {
     }
   }
 
-  function compose( f, g, x ) {
-    return f( g( x ) )
+  function compose( ...functions ) {
+    return functions.reduceRight((prev,current) => current(prev))
   }
 
   function redirectTo( url ) {
@@ -34,7 +34,7 @@ function extractFormValues( form ) {
   }
 
   function register() {
-    const response = compose( post( '/register' ), extractFormValues, document.forms[ 'loginForm' ] ).then( response => {
+    return compose( post( '/register' ), extractFormValues, document.forms[ 'loginForm' ] ).then( response => {
       redirectTo( '/to-do' )( [ response[ 'user_name' ] ] )
     } ).catch( error => {
       console.error( error )
