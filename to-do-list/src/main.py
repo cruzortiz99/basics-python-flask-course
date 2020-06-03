@@ -18,6 +18,8 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        return {"user_name": "Cruz"}
     return render_template('login.html')
 
 

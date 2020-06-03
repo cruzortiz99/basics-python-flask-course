@@ -19,7 +19,7 @@ function post( url ) {
       xhttp.send( JSON.stringify( values ) )
       xhttp.onreadystatechange = function () {
         if ( this.status >= 300 ) {
-          reject( 'Error' )
+          reject( `Error: ${status}` )
         }
         if ( this.readyState === 4 && this.status === 200 ) {
           resolve( JSON.parse( this.response ) )
@@ -30,5 +30,11 @@ function post( url ) {
 }
 
 function redirectTo( url ) {
-  return ( pathParameters ) => window.location.replace( `${url}/${pathParameters.join( '/' )}` )
+  return ( pathParameters ) => window.location.assign( `${url}/${pathParameters.join( '/' )}` )
+}
+
+function sizeValidator (maxSize) {
+  return (value) => {
+    return !!value.trim() && value.length > maxSize
+  }
 }
