@@ -29,14 +29,17 @@ def to_do(name):
         'name': name,
         'tasks': [
             {
+                'id': 1,
                 'name': 'Name 1',
                 'completed': False
             },
             {
+                'id': 2,
                 'name': 'Name 2',
                 'completed': False
             },
             {
+                'id': 3,
                 'name': 'Name 3',
                 'completed': True
             }

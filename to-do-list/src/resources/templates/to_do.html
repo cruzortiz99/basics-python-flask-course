@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% import './components/task.html' as TaskComponent %}
 
 {% block head %}
 <link rel="stylesheet" href="/static/css/to_do.css">
@@ -14,19 +15,14 @@
 </form>
 <h2>To Do</h2>
 {% for task in user.tasks if not task.completed %}
-<div class="task">
-  <input type="checkbox">
-  <span>{{task.name}}
-  </span>
-  <button class="remove button task">X</button>
-</div>
+{{ TaskComponent.taskChecker(task) }}
+{% else %}
+<p>Add a new task</p>
 {% endfor %}
 <h2>Completed</h2>
 {% for task in user.tasks if task.completed %}
-<div class="task">
-  <input type="checkbox" checked>
-  <span class="task-completed">{{task.name}}</span>
-  <button class="button remove task">X</button>
-</div>
-{% endfor %}
+{{ TaskComponent.taskChecker(task) }}
+{% else %}
+<p>Complete a task</p>
+{% endfor%}
 {% endblock%}
