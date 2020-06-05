@@ -2,9 +2,31 @@
 
 {% block head %}
 <link rel="stylesheet" href="/static/css/to_do.css">
+<script src="/static/js/to_do.js" defer></script>
 {% endblock %}
 
 {% block title %}TO DO{% endblock %}
 {% block content %}
-<h1>TODO: {{name}} </h1>
+<h1>{{user.name}} </h1>
+<form id="new_todo" action="#" method="post">
+  <input type="text" placeholder="New To Do">
+  <button type="submit">Save</button>
+</form>
+<h2>To Do</h2>
+{% for task in user.tasks if not task.completed %}
+<div class="task">
+  <input type="checkbox">
+  <span>{{task.name}}
+  </span>
+  <button class="remove button task">X</button>
+</div>
+{% endfor %}
+<h2>Completed</h2>
+{% for task in user.tasks if task.completed %}
+<div class="task">
+  <input type="checkbox" checked>
+  <span class="task-completed">{{task.name}}</span>
+  <button class="button remove task">X</button>
+</div>
+{% endfor %}
 {% endblock%}

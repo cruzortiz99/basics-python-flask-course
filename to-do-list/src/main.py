@@ -23,9 +23,26 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/to-do/<name>')
+@app.route('/to-do/<name>', methods=['POST', 'GET'])
 def to_do(name):
-    return render_template('to_do.html', name=name)
+    user = {
+        'name': name,
+        'tasks': [
+            {
+                'name': 'Name 1',
+                'completed': False
+            },
+            {
+                'name': 'Name 2',
+                'completed': False
+            },
+            {
+                'name': 'Name 3',
+                'completed': True
+            }
+        ]
+    }
+    return render_template('to_do.html', user=user)
 
 
 @app.route('/register', methods=['POST'])
