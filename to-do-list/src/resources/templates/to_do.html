@@ -1,27 +1,30 @@
 {% extends 'base.html' %}
-{% import './components/task.html' as TaskComponent %}
+{% from './components/task.html' import taskChecker%}
 
 {% block head %}
 <link rel="stylesheet" href="/static/css/to_do.css">
 <script src="/static/js/to_do.js" defer></script>
+<script src="/static/js/utils.js"></script>
 {% endblock %}
 
 {% block title %}TO DO{% endblock %}
 {% block content %}
 <h1>{{user.name}} </h1>
-<form id="new_todo" action="#" method="post">
-  <input type="text" placeholder="New To Do">
+<a id="logout">Exit</a>
+<form id="new_todo" method="post">
+  <input type="text" name="name" placeholder="New To Do">
   <button type="submit">Save</button>
 </form>
+<button id="refresh">Refresh</button>
 <h2>To Do</h2>
 {% for task in user.tasks if not task.completed %}
-{{ TaskComponent.taskChecker(task) }}
+{{ taskChecker(task) }}
 {% else %}
 <p>Add a new task</p>
 {% endfor %}
 <h2>Completed</h2>
 {% for task in user.tasks if task.completed %}
-{{ TaskComponent.taskChecker(task) }}
+{{ taskChecker(task) }}
 {% else %}
 <p>Complete a task</p>
 {% endfor%}
