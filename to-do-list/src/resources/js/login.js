@@ -44,3 +44,4 @@ function formValidator(formValues) {
 }
 
 listenAll('#loginForm')('submit')(loginHandler)
+listenAll('#register-button')('click')(register)

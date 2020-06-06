@@ -7,11 +7,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>Login</h1>
-<form id="loginForm" method="post">
-  <input type="text" name="name" placeholder="Usuario">
-  <input type="password" name="password" placeholder="Password">
-  <button type="submit">Ingresar</button>
-</form>
-<button onclick="register()">Registrar</button>
+<div class="login-container">
+  <h1 class="login-header">Login</h1>
+  <form id="loginForm" class="login-form" method="post">
+    <label for="name">User:</label>
+    <input type="text" name="name">
+    <label for="password">Password</label>
+    <input type="password" name="password">
+    <button class="button success" type="submit">Ingresar</button>
+  </form>
+  <button id="#register-button" class="button info">Registrar</button>
+
+</div>
 {% endblock %}

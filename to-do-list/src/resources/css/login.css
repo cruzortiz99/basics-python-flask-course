@@ -1,0 +1,84 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: rgb(19, 19, 19);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(132, 0, 255);
+  position: relative;
+}
+body::after {
+  content: '';
+  position: absolute;
+  height: 25vh;
+  width: 25vw;
+  top: 0px;
+  right: 0px;
+  background-image: linear-gradient(
+    to right top,
+    rgb(132, 0, 255) 50%,
+    rgb(203, 236, 136) 50%
+  );
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.login-container {
+  height: 80%;
+  min-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 40px 50px;
+}
+.login-form {
+  margin: 5rem 0px;
+  display: flex;
+  flex-direction: column;
+}
+.login-form > * {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.login-header {
+  font-size: 5rem;
+}
+input {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  border-bottom: 1px dashed black;
+}
+input:focus {
+  outline: none;
+}
+
+.button {
+  height: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+}
+
+.success {
+  background-color: rgb(58, 0, 111);
+  color: white;
+}
+.success:hover {
+  background-color: rgb(161, 61, 255);
+  color: rgb(19, 19, 19);
+}
+
+.info {
+  background-color: rgb(0, 47, 167);
+  color: white;
+}
+
+.info:hover {
+  background-color: rgb(84, 129, 243);
+  color: rgb(19, 19, 19);
+}
