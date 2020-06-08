@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/css/login.css">
+<link rel="stylesheet" href="/static/css/login.css" />
 <script src="/static/js/utils.js" defer></script>
 <script src="/static/js/login.js" defer></script>
 {% endblock %}
@@ -9,8 +9,7 @@
 {% block content %}
 <div class="login-container">
   <h1 class="login-header">Login</h1>
-  <form id="loginForm" class="login-form" method="post">
-    <label for="name">User:</label>
+  <form id="loginForm" class="login-form" method="post" autocomplete="off" <label for="name">User:</label>
     <input type="text" name="name">
     <label for="password">Password</label>
     <input type="password" name="password">
