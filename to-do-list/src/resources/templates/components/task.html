@@ -1,12 +1,12 @@
 {% macro  taskChecker(task) %}
 <div id="{{task.id}}-task" class="task">
   {% if task.completed %}
-  <input id="{{task.id}}-checkbox" class="checkbox task" type="checkbox" checked>
+  <input id="{{task.id}}-checkbox" class="checkbox" type="checkbox" checked>
   <span id="{{task.id}}-name" class="task-completed">{{task.name}}</span>
   {% else %}
-  <input id="{{task.id}}-checkbox" class="checkbox task" type="checkbox">
-  <span id="{{task.id}}-name">{{task.name}}</span>
+  <input id="{{task.id}}-checkbox" class="checkbox" type="checkbox">
+  <span id="{{task.id}}-name" class="task-uncompleted">{{task.name}}</span>
   {% endif %}
-  <button id="{{task.id}}-button" class="remove button task">X</button>
+  <button id="{{task.id}}-button" class="danger button">X</button>
 </div>
 {% endmacro %}

@@ -40,8 +40,8 @@ function logoutListener (event) {
   redirectTo('/login')([])
 }
 
-listenAll('.button.remove.task')('click')(taskRemoveButtonEventListener)
-listenAll('.checkbox.task')('change')(taskCheckboxEventListener)
+listenAll('.button.danger')('click')(taskRemoveButtonEventListener)
+listenAll('.checkbox')('change')(taskCheckboxEventListener)
 listenAll('#refresh')('click')(refresh)
 listenAll('#new_todo')('submit')(newTodoEventListener)
 listenAll('#logout')('click')(logoutListener)

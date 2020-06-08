@@ -9,23 +9,35 @@
 
 {% block title %}TO DO{% endblock %}
 {% block content %}
-<h1>{{user.name}} </h1>
-<a id="logout">Exit</a>
-<form id="new_todo" method="post">
-  <input type="text" name="name" placeholder="New To Do">
-  <button type="submit">Save</button>
-</form>
-<button id="refresh">Refresh</button>
-<h2>To Do</h2>
-{% for task in user.tasks if not task.completed %}
-{{ taskChecker(task) }}
-{% else %}
-<p>Add a new task</p>
-{% endfor %}
-<h2>Completed</h2>
-{% for task in user.tasks if task.completed %}
-{{ taskChecker(task) }}
-{% else %}
-<p>Complete a task</p>
-{% endfor%}
+<header>
+  <h3>{{user.name}} </h3>
+  <a id="logout">
+    <h3>Exit</h3>
+  </a>
+</header>
+<main>
+  <form id="new_todo" method="post">
+    <input type="text" name="name" placeholder="New To Do">
+    <button class="button success" type="submit">Save</button>
+  </form>
+  <div class="to-do-list">
+    <div class="to-do-list-header">
+      <h2>To Do</h2>
+      <button id="refresh" class="button info">Refresh</button>
+    </div>
+    {% for task in user.tasks if not task.completed %}
+    {{ taskChecker(task) }}
+    {% else %}
+    <p>Add a new task</p>
+    {% endfor %}
+    <div class="to-do-list-header">
+      <h2>Completed</h2>
+    </div>
+    {% for task in user.tasks if task.completed %}
+    {{ taskChecker(task) }}
+    {% else %}
+    <p>Complete a task</p>
+    {% endfor%}
+  </div>
+</main>
 {% endblock%}

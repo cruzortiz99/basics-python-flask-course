@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  color: rgb(19, 19, 19);
+  color: rgb(35, 35, 35);
 }
 
 html {
@@ -31,13 +31,16 @@ input[type='password']:focus {
   border-radius: 4px;
   font-size: 1rem;
   padding: 5px 0px;
+  min-width: 100px;
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .success {
   background-color: rgb(58, 0, 111);
   color: white;
 }
-button.success:hover {
+.button.success:hover {
   background-color: rgb(161, 61, 255);
   color: rgb(19, 19, 19);
 }
@@ -46,10 +49,19 @@ button.success:hover {
   background-color: rgb(0, 47, 167);
   color: white;
 }
-
-button.info:hover {
+.button.info:hover {
   background-color: rgb(84, 129, 243);
   color: rgb(19, 19, 19);
+}
+.danger {
+  background-color: rgb(167, 0, 0);
+  color: white;
+}
+.button.danger:hover {
+  background-color: rgb(243, 84, 84);
+  color: rgb(19, 19, 19);
+}
+.checkbox {
 }
 @keyframes fade-left {
   0% {

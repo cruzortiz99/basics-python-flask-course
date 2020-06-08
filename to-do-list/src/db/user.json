@@ -1,1 +1,1 @@
-[{"name": "Cruz", "tasks": []}, {"name": "Cruz Miguel", "tasks": []}]
+[{"name": "Cruz Miguel", "tasks": []}, {"name": "Cruz", "tasks": [{"id": 0, "name": "Tarea", "completed": false}, {"id": 1, "name": "Otra tarea", "completed": false}, {"id": 2, "name": "Nueva tarea", "completed": false}]}]
