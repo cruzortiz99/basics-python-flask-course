@@ -15,7 +15,7 @@ function register () {
     return connectForm('loginForm', '/register').then( response => {
       redirectTo( '/to-do' )( [ response[ 'name' ] ] )
     } ).catch( error => {
-      console.error( error )
+      alert('User already exists')
     } )
   } catch(error) {
     alert(error)
@@ -45,3 +45,4 @@ function formValidator(formValues) {
 
 listenAll('#loginForm')('submit')(loginHandler)
 listenAll('#register-button')('click')(register)
+console.log(document.querySelectorAll('#register-button'))
