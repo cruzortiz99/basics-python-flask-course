@@ -12,15 +12,17 @@ save_users_into_db_userjson = save_into_db(
 
 
 def get_user(name):
-    return list(filter(lambda user: user['name'] == name, load(
-        open(Path(__file__).parent.joinpath('..', 'db', 'user.json')))))[0]
+    return list(
+        filter(
+            lambda user: user['name'] == name,
+            get_db_user_from_db_userjson()))[0]
 
 
 def register_user(user_data):
-    new_user = User(name=user_data['name'])
+    new_user = User(name=user_data['name']).__dict__
     db_users = get_db_user_from_db_userjson()
     if len([db_user for db_user in db_users if db_user['name'] == new_user['name']]):
-        raise Exception(message='User already exists')
-    db_users.append(new_user)
+        raise Exception([('message', 'User already exists')])
+    db_users.append(new_user.__dict__)
     save_users_into_db_userjson(db_users)
     return new_user
