@@ -12,6 +12,11 @@ save_users_into_db_userjson = save_into_db(
 
 
 def get_user(name):
+    '''
+    Get user by name
+
+    :param name: of the user
+    '''
     return list(
         filter(
             lambda user: user['name'] == name,
@@ -19,6 +24,11 @@ def get_user(name):
 
 
 def register_user(user_data):
+    '''
+    Register a new user
+
+    :param user_data: dictionary model of the data sent
+    '''
     new_user = User(name=user_data['name']).__dict__
     db_users = get_db_user_from_db_userjson()
     if len([db_user for db_user in db_users if db_user['name'] == new_user['name']]):

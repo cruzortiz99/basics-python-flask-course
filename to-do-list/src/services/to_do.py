@@ -14,6 +14,13 @@ save_user_into_db_userjson = save_into_db(
 
 
 def save_task(user, new_task):
+    '''
+    Save task into user model
+
+    :param user: User dictionary model
+
+    :param new_task: Task dictionary model
+    '''
     db_users = get_db_user_from_db_userjson()
     user['tasks'].append(
         Task(
@@ -31,6 +38,13 @@ def save_task(user, new_task):
 
 
 def delete_task(user, task_id):
+    '''
+    Delete a task from a user
+
+    :param user: User dictionary model
+
+    :param task_id: id of the task
+    '''
     db_users = get_db_user_from_db_userjson()
     user['tasks'] = list(
         filter(
@@ -44,6 +58,13 @@ def delete_task(user, task_id):
 
 
 def check_task(user, task_id):
+    '''
+    Change the status of a user task
+
+    :param user: User dictionary model
+
+    :param task_id: id of the task
+    '''
     db_users = get_db_user_from_db_userjson()
     user['tasks'] = list(map(lambda task: task if task['id'] != task_id else
                              Task(name=task['name'],

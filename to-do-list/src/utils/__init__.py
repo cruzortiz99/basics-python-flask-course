@@ -2,6 +2,11 @@ from json import load, dump
 
 
 def get_higher_id(items):
+    '''
+    Get an id higher than the one in the list
+
+    :param items: list of dictionaries with id
+    '''
     items_sorted_by_id = sorted(
         items,
         key=lambda item: item['id'],
@@ -11,6 +16,11 @@ def get_higher_id(items):
 
 
 def get_higher_id_from_db(db_path):
+    '''
+    Get an id higher than the one in the db json
+
+    :param db_path: route of the data base
+    '''
     file = open(db_path)
     db_items = load(file)
     file.close()
@@ -18,6 +28,11 @@ def get_higher_id_from_db(db_path):
 
 
 def get_db_rows(db_path):
+    '''
+    Wrapper that get all the registers on the data base
+
+    :param db_path: route of the data base
+    '''
     file = open(db_path)
     db_rows = load(file)
     file.close()
@@ -25,4 +40,7 @@ def get_db_rows(db_path):
 
 
 def save_into_db(db_path):
+    '''
+    Wrapper of a function to save a data into a data base
+    '''
     return lambda data: dump(data, open(db_path, mode='w'))

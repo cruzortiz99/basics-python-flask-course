@@ -1,11 +1,11 @@
 class User():
     def __init__(self, name, tasks=[]):
         '''
-        Parameters:
-        ---
-        * name:str
+        User model
 
-        * tasks: Task
+        :param name:str
+
+        :param tasks: Task
         '''
         self.name = name
         self.tasks = tasks

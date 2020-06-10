@@ -4,14 +4,13 @@ from pathlib import Path
 class Task():
     def __init__(self, id, name, completed=False):
         '''
-        Parameters:
-        ---
+        Task model
 
-        * id: integer
+        :param id: integer
 
-        * name:str
+        :param name:str
 
-        * completed: str
+        :param completed: str
         '''
         self.name = name
         self.completed = completed

@@ -7,6 +7,11 @@ to_do_controller = Blueprint('to-do', __name__)
 
 @to_do_controller.route('/to-do/<name>', methods=['POST', 'GET'])
 def to_do(name):
+    '''
+    Route to get the tasks and post a task
+
+    :param name: of the user
+    '''
     user = get_user(name)
     if request.method == 'POST':
         return save_task(user, dict(request.get_json()))
@@ -17,6 +22,13 @@ def to_do(name):
 @to_do_controller.route('/to-do/<name>/<int:task_id>',
                         methods=['PATCH', 'DELETE'])
 def task(name, task_id):
+    '''
+    Route to update or delete a task
+
+    :param name: of the user
+
+    :param task_id: of the task
+    '''
     user = get_user(name)
     if request.method == 'DELETE':
         return delete_task(user, task_id)

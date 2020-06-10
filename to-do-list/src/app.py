@@ -12,9 +12,9 @@ app = Flask(
     static_url_path='/static',
     static_folder=str(resources_folder))
 
-app.register_blueprint(home_controller)
 app.register_blueprint(to_do_controller)
 app.register_blueprint(user_controller)
+app.register_blueprint(home_controller)
 
 
 if __name__ == '__main__':
